@@ -21,11 +21,11 @@ jobs:
         with:
           node-version: '16.x'
 
-      #- name: npm install, build, and test
-      #  run: |
-      #    npm install
-      #    npm run build --if-present
-      #    npm run test --if-present
+      - name: npm install, build, and test
+        run: |
+          npm install
+          npm run build --if-present
+          npm run test --if-present
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'sumukh-mp01-appsvc'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C7266D45E33346689C23AB4E204978FC }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5DA0D6E5F42E4A3291574EE6BFEF484B }}
           package: .
